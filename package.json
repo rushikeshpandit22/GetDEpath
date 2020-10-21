@@ -1,0 +1,23 @@
+{
+  "name": "sfmc_app",
+  "version": "1.0.0",
+  "description": "get the DE path using name or customer key",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rushikeshpandit22/GetDEpath.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rushikeshpandit22/GetDEpath/issues"
+  },
+  "homepage": "https://github.com/rushikeshpandit22/GetDEpath#readme",
+  "dependencies": {
+    "aws-sdk": "^2.775.0",
+    "express": "^4.17.1"
+  }
+}
