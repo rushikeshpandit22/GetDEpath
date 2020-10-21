@@ -12,10 +12,15 @@ app.use(require('body-parser').raw({
 
 // Main, error and success views
 
-app.get('/', function (request, response) {
+/*app.get('/', function (request, response) {
 	var jwtToken = request.body.jwt;
 	console.log(jwtToken);
 	response.sendFile(__dirname + '/index.html');
+});*/
+app.post('/', (req, res) => {
+	var jwtToken = req.body.jwt;
+	console.log(jwtToken);
+	response.sendFile(__dirname + '/index.html');	
 });
 app.get("/success", function (request, response) {
   response.sendFile(__dirname + '/success.html');
