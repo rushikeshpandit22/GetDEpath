@@ -9,7 +9,9 @@ app.use(express.static('public'));
 app.use(require('body-parser').raw({
    type: 'application/jwt'
 }));
-
+var clientid = process.env.Client_Id;
+var ClientSecret = process.env.Client_Secret;
+console.log(clientid);
 // Main, error and success views
 
 app.get('/', function (request, response) {
@@ -24,8 +26,6 @@ app.get("/error", function (request, response) {
 });
 
 app.post('/getDEpath', (req, res) => {
-	var jwtToken = req.body.jwt;
-	console.log(jwtToken);
 	
 	var result = true;
 	if(result){
