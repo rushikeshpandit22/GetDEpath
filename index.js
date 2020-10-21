@@ -25,7 +25,7 @@ app.get("/error", function (request, response) {
 });
 
 app.post('/getDEpath', (req, res) => {
-	var result = false;
+	var result = true;
 	if(result){
         res.redirect('/success');
 	}else{
