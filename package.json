@@ -18,6 +18,7 @@
   "homepage": "https://github.com/rushikeshpandit22/GetDEpath#readme",
   "dependencies": {
     "aws-sdk": "^2.775.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "jwt-simple": "^0.5.6"
   }
 }
