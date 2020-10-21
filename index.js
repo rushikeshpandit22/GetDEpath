@@ -13,7 +13,7 @@ app.use(require('body-parser').raw({
 // Main, error and success views
 
 app.get('/', function (request, response) {
-	var jwtToken = request.body;
+	var jwtToken = request.body.jwt;
 	console.log(jwtToken);
 	response.sendFile(__dirname + '/index.html');
 });
