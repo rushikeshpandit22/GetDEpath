@@ -13,10 +13,6 @@ app.use(require('body-parser').raw({
 // Main, error and success views
 
 app.get('/', function (request, response) {
-	app.post('/', (req, res) => {
-		var jwtToken = req.body.jwt;
-		console.log(jwtToken);
-	});
 	response.sendFile(__dirname + '/index.html');
 });
 
@@ -28,6 +24,9 @@ app.get("/error", function (request, response) {
 });
 
 app.post('/getDEpath', (req, res) => {
+	var jwtToken = req.body.jwt;
+	console.log(jwtToken);
+	
 	var result = true;
 	if(result){
         res.redirect('/success');
