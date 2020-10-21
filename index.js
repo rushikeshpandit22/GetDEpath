@@ -2,12 +2,17 @@
 const aws = require('aws-sdk');
 const express = require('express');
 var jwt = require('jwt-simple'); 
+const jwt = require('express-jwt');
+const jwksRsa = require('jwks-rsa');
 
 var port = process.env.PORT || 3000;
 const app = express();
 app.use(express.static('public'));
-app.use(require('body-parser').raw({
-   type: 'application/jwt'
+
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
 }));
 
 // Main, error and success views
