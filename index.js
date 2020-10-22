@@ -25,7 +25,7 @@ var conData = {
 	'clientId': clientid,
 	'clientSecret': ClientSecret  
 }
-axios({
+/*axios({
 	method:'post',
 	url:'https://auth.exacttargetapis.com/v1/requestToken',
 	data: conData,
@@ -41,7 +41,7 @@ axios({
 }).catch(function (error) {
 	console.log(error);								//Authorization failed  	
 	responsefromWeb.send(error);
-});
+});*/
 
 // Main, error and success views
 
