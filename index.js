@@ -22,8 +22,8 @@ var ClientSecret = process.env.Client_Secret;
 //Connect with the Marketing cloud using client id and client secret
 
 var conData = {
-	'clientId': process.env.CLIENT_ID,
-	'clientSecret': process.env.CLIENT_SECRET  
+	'clientId': clientid,
+	'clientSecret': ClientSecret  
 }
 axios({
 	method:'post',
