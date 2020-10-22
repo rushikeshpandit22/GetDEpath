@@ -23,8 +23,8 @@ var ClientSecret = process.env.Client_Secret;
 
 var conData = {
 	"grant_type": "client_credentials",
-	'clientId': clientid,
-	'clientSecret': ClientSecret,
+	'client_id': clientid,
+	'client_secret': ClientSecret,
 	"account_id": "110007781"
 }
 axios({
