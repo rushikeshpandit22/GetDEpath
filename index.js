@@ -14,14 +14,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-
+var clientid = process.env.Client_Id;
+var ClientSecret = process.env.Client_Secret;
+console.log(clientid);
 // Main, error and success views
 
 app.get('/', function (request, response) {
-	var jwtToken = req.body.jwt;
-	console.log(jwtToken);
 	response.sendFile(__dirname + '/index.html');
 });
+
 app.get("/success", function (request, response) {
   response.sendFile(__dirname + '/success.html');
 });
@@ -30,7 +31,8 @@ app.get("/error", function (request, response) {
 });
 
 app.post('/getDEpath', (req, res) => {
-	var result = false;
+	
+	var result = true;
 	if(result){
         res.redirect('/success');
 	}else{
