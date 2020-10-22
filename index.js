@@ -54,7 +54,7 @@ app.post('/getDEpath', (req, res) => {
 			}
 		})
 		.then(function(response) {
-			var DEprop = res.body.DEprop,value = res.body.DEval;
+			
 			console.log('Authorization Sent');		
 			token = response.data.access_token;				//Got the token
 			//console.log(token);
