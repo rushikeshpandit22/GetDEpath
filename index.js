@@ -44,9 +44,7 @@ app.get("/error", function (request, response) {
 
 app.post('/getDEpath', (req, res) => {
 	
-	var result = res;
-	console.log(req);
-	console.log(req.body);
+	console.log(req.body.DEprop);
 		axios({
 			method:'post',
 			url: 'https://mcp77m41n18wgt8vbq2j9n10v1dq.auth.marketingcloudapis.com/v2/token',
