@@ -22,12 +22,14 @@ var ClientSecret = process.env.Client_Secret;
 //Connect with the Marketing cloud using client id and client secret
 
 var conData = {
+	"grant_type": "client_credentials",
 	'clientId': clientid,
-	'clientSecret': ClientSecret  
+	'clientSecret': ClientSecret,
+	"account_id": "110007781"
 }
 axios({
 	method:'post',
-	url: process.env.autoURL+'v2/token',
+	url: 'https://mcp77m41n18wgt8vbq2j9n10v1dq.auth.marketingcloudapis.com/v2/token',
 	data: conData,
 	headers:{
 	'Content-Type': 'application/json',
@@ -37,7 +39,7 @@ axios({
 	
 	responsefromWeb.send('Authorization Sent');		
 	token = response.data.access_token;				//Got the token
-	console.log(token);
+	console.log(response.data);
 	
 }).catch(function (error) {
 	console.log(error);								//Authorization failed  	
