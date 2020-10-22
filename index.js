@@ -1,8 +1,8 @@
 
-const aws = require('aws-sdk');
+
 const express = require('express');
-var jwt = require('jwt-simple'); 
-const jwt = require('express-jwt');
+//var jwt = require('jwt-simple'); 
+//const jwt = require('express-jwt');
 const jwksRsa = require('jwks-rsa');
 const axios = require('axios');
 
