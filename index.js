@@ -39,7 +39,7 @@ axios({
 	
 	console.log('Authorization Sent');		
 	token = response.data.access_token;				//Got the token
-	console.log(response.data);
+	console.log(token);
 	
 }).catch(function (error) {
 	console.log(error);
@@ -66,7 +66,7 @@ app.post('/getDEpath', (req, res) => {
 	}else{
 		res.redirect('/error');
 	}
-	console.log(res);
+	console.log(res.body.DEprop);
 });
 
 app.listen(port, () => console.log('Gator app listening on port '+port+''));
