@@ -27,23 +27,7 @@ var conData = {
 	'client_secret': ClientSecret,
 	"account_id": "110007781"
 }
-axios({
-	method:'post',
-	url: 'https://mcp77m41n18wgt8vbq2j9n10v1dq.auth.marketingcloudapis.com/v2/token',
-	data: conData,
-	headers:{
-	'Content-Type': 'application/json',
-	}
-})
-.then(function(response) {
-	
-	console.log('Authorization Sent');		
-	token = response.data.access_token;				//Got the token
-	console.log(token);
-	
-}).catch(function (error) {
-	console.log(error);
-});
+
 
 // Main, error and success views
 
@@ -61,12 +45,28 @@ app.get("/error", function (request, response) {
 app.post('/getDEpath', (req, res) => {
 	
 	var result = res;
-	if(result){
-        res.redirect('/success');
-	}else{
-		res.redirect('/error');
-	}
-	console.log(res.body.DEprop);
+		axios({
+			method:'post',
+			url: 'https://mcp77m41n18wgt8vbq2j9n10v1dq.auth.marketingcloudapis.com/v2/token',
+			data: conData,
+			headers:{
+			'Content-Type': 'application/json',
+			}
+		})
+		.then(function(response) {
+			var DEprop = res.body.DEprop,value = res.body.DEval;
+			console.log('Authorization Sent');		
+			token = response.data.access_token;				//Got the token
+			//console.log(token);
+			res.redirect('/success');
+			console.log(res.body[DEprop]);
+			console.log('/n'+res.body);
+			
+		}).catch(function (error) {
+			console.log(error);
+			res.redirect('/error');
+		});
+	
 });
 
 app.listen(port, () => console.log('Gator app listening on port '+port+''));
