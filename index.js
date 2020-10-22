@@ -25,23 +25,24 @@ var conData = {
 	'clientId': clientid,
 	'clientSecret': ClientSecret  
 }
-/*axios({
+axios({
 	method:'post',
-	url:'https://auth.exacttargetapis.com/v1/requestToken',
+	url: process.env.autoURL+'v2/token',
 	data: conData,
 	headers:{
 	'Content-Type': 'application/json',
 	}
 })
 .then(function(response) {
-	console.log(response);
+	
 	responsefromWeb.send('Authorization Sent');		
-	token = response.data.accessToken;				//Got the token
-
+	token = response.data.access_token;				//Got the token
+	console.log(token);
+	
 }).catch(function (error) {
 	console.log(error);								//Authorization failed  	
 	responsefromWeb.send(error);
-});*/
+});
 
 // Main, error and success views
 
@@ -58,12 +59,13 @@ app.get("/error", function (request, response) {
 
 app.post('/getDEpath', (req, res) => {
 	
-	var result = true;
+	var result = res;
 	if(result){
         res.redirect('/success');
 	}else{
 		res.redirect('/error');
 	}
+	console.log(res);
 });
 
 app.listen(port, () => console.log('Gator app listening on port '+port+''));
