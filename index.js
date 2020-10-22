@@ -37,13 +37,12 @@ axios({
 })
 .then(function(response) {
 	
-	responsefromWeb.send('Authorization Sent');		
+	console.log('Authorization Sent');		
 	token = response.data.access_token;				//Got the token
 	console.log(response.data);
 	
 }).catch(function (error) {
-	console.log(error);								//Authorization failed  	
-	responsefromWeb.send(error);
+	console.log(error);
 });
 
 // Main, error and success views
