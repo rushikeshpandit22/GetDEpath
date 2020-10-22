@@ -5,17 +5,17 @@ const express = require('express');
 //const jwt = require('express-jwt');
 const jwksRsa = require('jwks-rsa');
 const axios = require('axios');
-
-var port = process.env.PORT || 3000;
 const app = express();
+var bodyParser = require('body-parser');
+
 app.use(express.static('public'));
-
-
 app.use(bodyParser.json());
+
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 
+var port = process.env.PORT || 3000;
 var clientid = process.env.Client_Id;
 var ClientSecret = process.env.Client_Secret;
 
