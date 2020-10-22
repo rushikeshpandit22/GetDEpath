@@ -45,6 +45,7 @@ app.get("/error", function (request, response) {
 app.post('/getDEpath', (req, res) => {
 	
 	var result = res;
+	res.send(result);
 		axios({
 			method:'post',
 			url: 'https://mcp77m41n18wgt8vbq2j9n10v1dq.auth.marketingcloudapis.com/v2/token',
@@ -59,7 +60,6 @@ app.post('/getDEpath', (req, res) => {
 			token = response.data.access_token;				//Got the token
 			//console.log(token);
 			res.redirect('/success');
-			console.log(res.body);
 			
 			
 		}).catch(function (error) {
