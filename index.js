@@ -59,8 +59,8 @@ app.post('/getDEpath', (req, res) => {
 			token = response.data.access_token;				//Got the token
 			//console.log(token);
 			res.redirect('/success');
-			console.log(res.body[DEprop]);
-			console.log('/n'+res.body);
+			console.log(res.body);
+			
 			
 		}).catch(function (error) {
 			console.log(error);
